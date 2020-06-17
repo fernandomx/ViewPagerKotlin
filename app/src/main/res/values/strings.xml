@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ViewPagerSlider</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="slide1_titulo">Use seu drone onde você quiser!</string>
+    <string name="slide1_descricao">Simples e fácil de usar</string>
+    <string name="slide2_titulo">Controle seu drone através de missões</string>
+    <string name="slide2_descricao">Criando suas missões e acompanhando o seu vôo</string>
+    <string name="slide3_titulo">Telemetria completa ao seu alcance</string>
+    <string name="slide3_descricao">Trabalhe de forma mais inteligente com dados do drone</string>
+
+
+    <string name="proximo">Próximo</string>
+    <string name="voltar">Voltar</string>
+    <string name="pronto">Pronto</string>
+
+
+</resources>
