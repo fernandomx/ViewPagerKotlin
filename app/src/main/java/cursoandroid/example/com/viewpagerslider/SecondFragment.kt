@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -24,10 +26,10 @@ class SecondFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    var next: TextView? = null
-    var back: TextView? = null
+    private lateinit var next: ImageButton
+    private lateinit var back: ImageButton
+    private lateinit var viewPager: ViewPager
 
-    var viewPager: ViewPager? = null
 
 
     fun SecondFragment() {
@@ -46,25 +48,35 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_second, container, false)
 
-        //Inicialize ViewPager from main Activity
+
+        // Inflate the layout for this fragment
+        //val view = inflater.inflate(R.layout.fragment_first, container, false)
+        var view: View? = inflater.inflate(R.layout.fragment_second, container, false);
+
 
         //Inicialize ViewPager from main Activity
         viewPager = activity!!.findViewById(R.id.viewPager)
 
-        next = view.findViewById<TextView>(R.id.slideOneNext)
-        next!!.setOnClickListener(View.OnClickListener { viewPager!!.setCurrentItem(1) })
+        next = view!!.findViewById<ImageButton>(R.id.slideTwoNext)
+        next.setOnClickListener { viewPager.currentItem = 2 }
 
-        back = view.findViewById<TextView>(R.id.slideTwoBack)
-
-        back!!.setOnClickListener { viewPager!!.setCurrentItem(0) }
+        back = view!!.findViewById<ImageButton>(R.id.slideTwoBack)
+        back.setOnClickListener { viewPager.currentItem = 0 }
 
 
         return view
 
 
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+    }
+
+
+
 
     companion object {
         /**

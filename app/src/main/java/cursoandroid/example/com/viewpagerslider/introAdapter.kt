@@ -1,13 +1,15 @@
 package cursoandroid.example.com.viewpagerslider
 
+import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class introAdapter: FragmentPagerAdapter {
+class introAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 
 
-
-
+    @NonNull
+    @Override
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> FirstFragment()
@@ -17,7 +19,11 @@ class introAdapter: FragmentPagerAdapter {
         }!!
     }
 
+    @Override
     override fun getCount(): Int {
         return 2
     }
+
+
+
 }

@@ -42,37 +42,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <TextView
+
+        <!--
+       <TextView
+           android:id="@+id/slideTwoBack"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom|start"
+           android:layout_weight="1"
+           android:text="@string/voltar"
+           android:textSize="20dp"
+           android:textColor="@color/colorAccent"
+           android:clickable="true"
+           android:focusable="true"
+           />-->
+        <!--
+               <TextView
+                   android:id="@+id/slideTwoNext"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="bottom|end"
+                   android:gravity="bottom|end"
+                   android:layout_weight="1"
+                   android:text="@string/proximo"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorAccent"
+                   android:clickable="true"
+                   android:focusable="true"
+
+                   />-->
+
+
+        <ImageButton
             android:id="@+id/slideTwoBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
+            android:layout_gravity="bottom|end"
             android:layout_weight="1"
-            android:text="@string/voltar"
-            android:textSize="20dp"
-            android:textColor="@color/colorAccent"
-            android:clickable="true"
-            android:focusable="true"
-            />
+            android:background="@android:color/transparent"
+            android:gravity="bottom|end"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_back" />
 
-        <TextView
+
+        <ImageButton
             android:id="@+id/slideTwoNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:gravity="bottom|end"
             android:layout_weight="1"
-            android:text="@string/proximo"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:clickable="true"
-            android:focusable="true"
-
-            />
-
-
-    </LinearLayout>
+            android:background="@android:color/transparent"
+            android:gravity="bottom|end"
+            android:scaleType="fitEnd"
+            android:src="@drawable/ic_next" />
 
 
 
-</LinearLayout>
+
+           </LinearLayout>
+
+
+
+        </LinearLayout>

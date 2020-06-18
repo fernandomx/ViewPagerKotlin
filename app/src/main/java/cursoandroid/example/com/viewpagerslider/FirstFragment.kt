@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 
@@ -20,9 +21,9 @@ private const val ARG_PARAM2 = "param2"
  */
 class FirstFragment : Fragment() {
 
-    var next: TextView? = null
 
-    var viewPager: ViewPager? = null
+    private lateinit var next: ImageButton
+    private lateinit var viewPager: ViewPager
 
 
     fun FirstFragment() {
@@ -46,27 +47,33 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_first, container, false)
+
 
         // Inflate the layout for this fragment
+        //val view = inflater.inflate(R.layout.fragment_first, container, false)
+        var view: View? = inflater.inflate(R.layout.fragment_first, container, false);
 
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_first, container, false)
-
-        //Inicialize ViewPager from main Activity
 
         //Inicialize ViewPager from main Activity
         viewPager = activity!!.findViewById(R.id.viewPager)
 
-        next = view.findViewById<TextView>(R.id.slideOneNext)
-        next!!.setOnClickListener(View.OnClickListener { viewPager!!.setCurrentItem(1) })
+        next = view!!.findViewById<ImageButton>(R.id.slideOneNext)
+        //next.setOnClickListener(View.OnClickListener { viewPager.setCurrentItem(1) })
+
+        next.setOnClickListener { viewPager.currentItem = 1 }
+
+
 
         return view
 
 
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
     }
+
 
     companion object {
         /**
