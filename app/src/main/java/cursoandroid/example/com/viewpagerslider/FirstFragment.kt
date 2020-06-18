@@ -20,9 +20,6 @@ private const val ARG_PARAM2 = "param2"
  */
 class FirstFragment : Fragment() {
 
-
-
-
     var next: TextView? = null
 
     var viewPager: ViewPager? = null
