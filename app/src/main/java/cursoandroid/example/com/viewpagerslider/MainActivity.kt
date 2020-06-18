@@ -15,5 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         viewPager = findViewById(R.id.viewPager)
 
+        val adapter = introAdapter(supportFragmentManager)
+        viewPager!!.setAdapter(adapter)
+
     }
 }
